@@ -1,6 +1,6 @@
 package com.augieafr.reqresapp.data.network
 
-import com.augieafr.reqresapp.data.model.request.LoginResponse
+import com.augieafr.reqresapp.data.model.response.LoginResponse
 import retrofit2.Response
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded

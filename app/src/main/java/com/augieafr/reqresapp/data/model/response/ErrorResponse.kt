@@ -1,4 +1,4 @@
-package com.augieafr.reqresapp.data.model.request
+package com.augieafr.reqresapp.data.model.response
 
 import com.google.gson.annotations.SerializedName
 
