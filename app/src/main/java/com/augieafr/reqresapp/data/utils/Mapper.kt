@@ -1,6 +1,8 @@
 package com.augieafr.reqresapp.data.utils
 
-import com.augieafr.reqresapp.data.model.request.ErrorResponse
+import com.augieafr.reqresapp.data.model.response.ErrorResponse
+import com.augieafr.reqresapp.data.model.response.UserItem
+import com.augieafr.reqresapp.ui.model.UserUiModel
 import com.google.gson.Gson
 import retrofit2.Response
 
@@ -18,3 +20,11 @@ fun <T> Response<T>.toReqresException() : ReqresException {
         else -> ReqresException.UnexpectedError
     }
 }
+
+fun UserItem.toUserUiModel() = UserUiModel(
+    id = id,
+    email = email,
+    firstName = firstName,
+    lastName = lastName,
+    avatar = avatar.orEmpty()
+)
