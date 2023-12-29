@@ -27,4 +27,8 @@ class AuthRepository @Inject constructor(
             )
         }
     }
+
+    suspend fun logout() {
+        userPreference.setUserToken("")
+    }
 }

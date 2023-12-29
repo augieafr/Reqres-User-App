@@ -1,6 +1,6 @@
 package com.augieafr.reqresapp.data.utils
 
-sealed class ReqresException(val message: String) {
+sealed class ReqresException(override val message: String) : Exception() {
     class BadRequest(message: String) : ReqresException(message)
     class Unauthorized(message: String) : ReqresException(message)
     class Forbidden(message: String) : ReqresException(message)
