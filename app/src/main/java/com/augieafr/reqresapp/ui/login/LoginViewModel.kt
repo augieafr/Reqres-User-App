@@ -23,6 +23,8 @@ class LoginViewModel @Inject constructor(private val repository: AuthRepository)
     val loginUiState: SharedFlow<LoginUiState>
         get() = _loginUiState
 
+    val token = repository.userToken
+
     fun setEmailErrorState(isError: Boolean) {
         _formsErrorState.value = _formsErrorState.value.copy(first = isError)
     }

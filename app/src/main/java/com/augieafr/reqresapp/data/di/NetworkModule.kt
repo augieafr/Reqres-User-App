@@ -2,11 +2,9 @@ package com.augieafr.reqresapp.data.di
 
 import com.augieafr.reqresapp.BuildConfig
 import com.augieafr.reqresapp.data.network.ApiService
-import com.augieafr.reqresapp.data.repository.AuthRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -43,15 +41,4 @@ class NetworkModule {
     @Provides
     @Singleton
     fun provideApiService(retrofit: Retrofit) = retrofit.create(ApiService::class.java)
-}
-
-@Module
-@InstallIn(ViewModelComponent::class)
-class RepositoryModule {
-
-    @Provides
-    fun provideAuthRepository(apiService: ApiService): AuthRepository {
-        return AuthRepository(apiService)
-    }
-
 }
