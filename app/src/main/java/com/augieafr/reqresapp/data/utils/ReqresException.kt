@@ -9,6 +9,6 @@ sealed class ReqresException(val message: String) {
     class BadGateway(message: String) : ReqresException(message)
     class ServiceUnavailable(message: String) : ReqresException(message)
     class GatewayTimeout(message: String) : ReqresException(message)
-    data object UnexpectedError : ReqresException("Unexpected Error")
-    data object EmptyResultException : ReqresException("Empty Result")
+    data object UnexpectedError : ReqresException("Unexpected Error Occurred")
+    data object EmptyResultException : ReqresException("There is no data available")
 }

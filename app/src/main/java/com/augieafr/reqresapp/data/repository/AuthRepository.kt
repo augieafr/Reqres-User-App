@@ -13,8 +13,10 @@ class AuthRepository @Inject constructor(private val apiService: ApiService) {
             // TODO : save token to datastore
             flowCollector.emit(ResultState.Success(true))
         } else {
-            ResultState.Error<Boolean>(
-                result.toReqresException()
+            flowCollector.emit(
+                ResultState.Error(
+                    result.toReqresException()
+                )
             )
         }
     }
